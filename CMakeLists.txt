@@ -5,6 +5,7 @@ set(CMAKE_CXX_STANDARD 14)
 
 add_executable(BeautyOfDataStructureAndAlgorithm
         main.cpp
-        Array/Array.cpp Array/Array.h
-        LinkedList/LinkedList.cpp LinkedList/LinkedList.h
+        05_Array/Array.cpp 05_Array/Array.h
+        06_LinkedList/LinkedList.cpp 06_LinkedList/LinkedList.h
+        44_ShortestPath/ShortestPath.h 44_ShortestPath/dijkstraWithSTLQueue.cpp 44_ShortestPath/dijkstraWithCusQueue.cpp
         )
