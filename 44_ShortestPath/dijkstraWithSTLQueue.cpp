@@ -2,7 +2,7 @@
 // Created by 李研 on 2019/7/13.
 //
 
-#include "ShortestPath.h"
+#include "shortestPath.hpp"
 #include <queue>
 
 template <typename T>
