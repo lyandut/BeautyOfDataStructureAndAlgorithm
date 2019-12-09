@@ -14,6 +14,9 @@ public:
     // 15_BinarySearch
     static void testBinarySearch();
 
+    // 16_BinarySearch
+    static void testBinarySearch2();
+
     // 44_ShortestPath
     static void testShortestPath();
 };

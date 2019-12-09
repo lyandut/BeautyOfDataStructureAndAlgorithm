@@ -40,16 +40,31 @@ public:
         return bsearchInternally(a, 0, n - 1, value);
     }
 
+    static int bsearchInternally(const vector<int> &a, int low, int high, int value) {
+        if (low > high) { return -1; }
+
+        int mid = low + ((high - low) >> 1); // 优化: 防止 low+high 溢出, 位运算比除法效率高
+        if (a[mid] < value) {
+            return bsearchInternally(a, mid + 1, high, value);
+        } else if (a[mid] > value) {
+            return bsearchInternally(a, low, mid - 1, value);
+        } else {
+            return mid;
+        }
+    }
+
     /*
      * 3. 二分查找求一个数的平方根, 精确到小数点后 6 位
      */
     static double bsearchSqrt(double x, double precision = 0.000001) {
         if (x < 0) { return -1; }
+
         double low = 0, high = x;
         if (x > 0 && x <= 1) {
             low = x;
             high = 1;
         }
+
         double mid = low + (high - low) / 2;
         while (true) {
             if ((mid * mid - x) > precision) {
@@ -63,19 +78,6 @@ public:
         }
     }
 
-private:
-    static int bsearchInternally(const vector<int> &a, int low, int high, int value) {
-        if (low > high) { return -1; }
-
-        int mid = low + ((high - low) >> 1); // 优化: 防止 low+high 溢出, 位运算比除法效率高
-        if (a[mid] < value) {
-            return bsearchInternally(a, mid + 1, high, value);
-        } else if (a[mid] > value) {
-            return bsearchInternally(a, low, mid - 1, value);
-        } else {
-            return mid;
-        }
-    }
 };
 
 #endif //BEAUTYOFDATASTRUCTUREANDALGORITHM_BINARYSEARCH_HPP

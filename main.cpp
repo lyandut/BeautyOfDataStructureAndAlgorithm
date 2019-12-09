@@ -4,9 +4,14 @@
 int main() {
     std::cout << "Hello, Beauty of Data Structure and Algorithm!" << std::endl;
 
-    Tester::testBinarySearch();
+    // 15
+    // Tester::testBinarySearch();
 
-    Tester::testShortestPath();
+    // 16
+    Tester::testBinarySearch2();
+
+    // 44
+    // Tester::testShortestPath();
 
     return 0;
 }
