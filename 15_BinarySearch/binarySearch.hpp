@@ -40,6 +40,29 @@ public:
         return bsearchInternally(a, 0, n - 1, value);
     }
 
+    /*
+     * 3. 二分查找求一个数的平方根, 精确到小数点后 6 位
+     */
+    static double bsearchSqrt(double x, double precision = 0.000001) {
+        if (x < 0) { return -1; }
+        double low = 0, high = x;
+        if (x > 0 && x <= 1) {
+            low = x;
+            high = 1;
+        }
+        double mid = low + (high - low) / 2;
+        while (true) {
+            if ((mid * mid - x) > precision) {
+                high = mid;
+            } else if ((x - mid * mid > precision)) {
+                low = mid;
+            } else {
+                return mid;
+            }
+            mid = low + (high - low) / 2;;
+        }
+    }
+
 private:
     static int bsearchInternally(const vector<int> &a, int low, int high, int value) {
         if (low > high) { return -1; }
