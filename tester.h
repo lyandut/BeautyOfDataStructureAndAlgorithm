@@ -17,6 +17,12 @@ public:
     // 16_BinarySearch
     static void testBinarySearch2();
 
+    // 40_DynamicProgramming
+    static void testDynamicProgramming();
+
+    // 41_DynamicProgramming
+    static void testDynamicProgramming2();
+
     // 44_ShortestPath
     static void testShortestPath();
 };

@@ -8,7 +8,10 @@ int main() {
     // Tester::testBinarySearch();
 
     // 16
-    Tester::testBinarySearch2();
+    // Tester::testBinarySearch2();
+
+    // 40
+    Tester::testDynamicProgramming();
 
     // 44
     // Tester::testShortestPath();

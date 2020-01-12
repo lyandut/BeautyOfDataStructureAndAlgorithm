@@ -9,5 +9,7 @@ add_executable(BeautyOfDataStructureAndAlgorithm
         06_LinkedList/LinkedList.cpp 06_LinkedList/LinkedList.h
         15_BinarySearch/binarySearch.hpp 15_BinarySearch/test_binarySearch.cpp
         16_BinarySearch/binarySearch2.hpp 16_BinarySearch/test_binarySearch2.cpp
+        40_DynamicProgramming/DynamicProgramming.hpp 40_DynamicProgramming/test_DynamicProgramming.cpp
+        41_DynamicProgramming/DynamicProgramming2.hpp 41_DynamicProgramming/test_DynamicProgramming2.cpp
         44_ShortestPath/shortestPath.hpp 44_ShortestPath/dijkstraWithSTLQueue.cpp 44_ShortestPath/dijkstraWithCusQueue.cpp 44_ShortestPath/test_shortPath.cpp
         )
