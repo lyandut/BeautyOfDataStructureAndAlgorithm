@@ -23,6 +23,9 @@ public:
     // 41_DynamicProgramming
     static void testDynamicProgramming2();
 
+    // 42_DynamicProgramming
+    static void testDynamicProgramming3();
+
     // 44_ShortestPath
     static void testShortestPath();
 };

@@ -12,4 +12,5 @@ Beauty of Data Structure and Algorithm
 |16| BinarySearch | [c++](16_BinarySearch)|[c-cpp](https://github.com/wangzheng0822/algo/tree/master/c-cpp/16_bsearch)|
 |40| DynamicProgramming | [c++](40_DynamicProgramming)|[python](https://github.com/wangzheng0822/algo/tree/master/python/40_dynamic_programming)|
 |41| DynamicProgramming | [c++](41_DynamicProgramming)|[python](https://github.com/wangzheng0822/algo/tree/master/python/41_dynamic_programming)|
+|42| DynamicProgramming | [c++](42_DynamicProgramming)|[python](https://github.com/wangzheng0822/algo/tree/master/python/42_dynamic_programming)|
 |44| ShortestPath | [c++](44_ShortestPath)|[python](https://github.com/wangzheng0822/algo/tree/master/python/44_shortest_path)|

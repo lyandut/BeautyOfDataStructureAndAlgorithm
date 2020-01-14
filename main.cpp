@@ -11,7 +11,13 @@ int main() {
     // Tester::testBinarySearch2();
 
     // 40
-    Tester::testDynamicProgramming();
+    // Tester::testDynamicProgramming();
+
+    // 41
+    // Tester::testDynamicProgramming2();
+
+    // 42
+    Tester::testDynamicProgramming3();
 
     // 44
     // Tester::testShortestPath();
