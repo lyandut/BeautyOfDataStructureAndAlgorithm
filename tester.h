@@ -17,6 +17,9 @@ public:
     // 16_BinarySearch
     static void testBinarySearch2();
 
+    // 39_Backtracking
+    static void testBacktracking();
+
     // 40_DynamicProgramming
     static void testDynamicProgramming();
 

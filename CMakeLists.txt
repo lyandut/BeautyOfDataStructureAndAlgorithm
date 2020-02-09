@@ -13,4 +13,4 @@ add_executable(BeautyOfDataStructureAndAlgorithm
         41_DynamicProgramming/DynamicProgramming2.hpp 41_DynamicProgramming/test_DynamicProgramming2.cpp
         42_DynamicProgramming/DynamicProgramming3.hpp 42_DynamicProgramming/test_DynamicProgramming3.cpp
         44_ShortestPath/shortestPath.hpp 44_ShortestPath/dijkstraWithSTLQueue.cpp 44_ShortestPath/dijkstraWithCusQueue.cpp 44_ShortestPath/test_shortPath.cpp
-        )
+        39_Backtracking/Backtracking.hpp 39_Backtracking/test_Backtracking.cpp)
