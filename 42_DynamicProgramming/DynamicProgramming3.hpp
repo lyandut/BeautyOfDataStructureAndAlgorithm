@@ -31,31 +31,24 @@ public:
      */
     static int lwstDP(const string &a, const string &b) {
         int n = a.size(), m = b.size();
-        vector<vector<int>> min_dist(n, vector<int>(m));
-        // 初始化第0行:a[0]与b[0..j]的编辑距离
-        for (int j = 0; j < m; ++j) {
-            if (a[0] == b[j]) min_dist[0][j] = j;
-            else if (j != 0) min_dist[0][j] = min_dist[0][j - 1] + 1;
-            else min_dist[0][j] = 1;
-        }
-        // 初始化第0行:a[0..i]与b[0]的编辑距离
-        for (int i = 0; i < n; ++i) {
-            if (a[i] == b[0]) min_dist[i][0] = i;
-            else if (i == 0) min_dist[i][0] = 1;
-            else min_dist[i][0] = min_dist[i - 1][0] + 1;
-        }
+        vector<vector<int>> min_dist(n + 1, vector<int>(m + 1));
+        // 初始化第0行: 空字符串与b[0..j]的编辑距离
+        for (int j = 0; j <= m; ++j) { min_dist[0][j] = j; }
+        // 初始化第0列: a[0..i]与空字符串的编辑距离
+        for (int i = 0; i <= n; ++i) { min_dist[i][0] = i; }
         // 按行填表
-        for (int i = 1; i < n; ++i) {
-            for (int j = 1; j < m; ++j) {
-                int temp = std::min(min_dist[i - 1][j] + 1, min_dist[i][j - 1] + 1);
+        for (int i = 1; i <= n; ++i) {
+            for (int j = 1; j <= m; ++j) {
                 if (a[i] == b[j]) {
-                    min_dist[i][j] = std::min(temp, min_dist[i - 1][j - 1]);
+                    min_dist[i][j] = std::min(min_dist[i - 1][j - 1],
+                                              std::min(min_dist[i - 1][j] + 1, min_dist[i][j - 1] + 1));
                 } else {
-                    min_dist[i][j] = std::min(temp, min_dist[i - 1][j - 1] + 1);
+                    min_dist[i][j] = std::min(min_dist[i - 1][j - 1] + 1,
+                                              std::min(min_dist[i - 1][j] + 1, min_dist[i][j - 1] + 1));
                 }
             }
         }
-        return min_dist[n - 1][m - 1];
+        return min_dist[n][m];
     }
 
 

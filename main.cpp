@@ -11,7 +11,7 @@ int main() {
     // Tester::testBinarySearch2();
 
     // 39
-    Tester::testBacktracking();
+    // Tester::testBacktracking();
 
     // 40
     // Tester::testDynamicProgramming();
@@ -20,7 +20,7 @@ int main() {
     // Tester::testDynamicProgramming2();
 
     // 42
-    // Tester::testDynamicProgramming3();
+    Tester::testDynamicProgramming3();
 
     // 44
     // Tester::testShortestPath();

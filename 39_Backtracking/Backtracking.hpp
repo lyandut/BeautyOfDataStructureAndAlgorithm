@@ -13,6 +13,13 @@ using std::vector;
 
 /*
  * 八皇后问题
+ * 1. calQueens() 没有明确地体现出回溯算法 choose -> explore -> un-choose 的三阶段过程，
+ * 更像是把回溯理解成是“有条件的递归搜索”，当 isOK() 为 True 时，递归调用自己；
+ *
+ * 2. vector<int> _result; // 下标表示行,值表示queen存储在哪一列
+ * 这里一维数组的使用很巧妙，_result[row] = column 暗含了回溯中状态重置、更新的过程，
+ * 如果使用二维数组表示棋盘，则需要在递归调用之后，显示地重置数组状态。
+ * 参考：https://github.com/lyandut/MyLeetCode/blob/master/nQueens.cpp
  */
 class EightQueens {
 public:
