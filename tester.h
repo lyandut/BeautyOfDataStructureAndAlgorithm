@@ -9,7 +9,7 @@
 
 using namespace std;
 
-class Tester{
+class Tester {
 public:
     // 15_BinarySearch
     static void testBinarySearch();
@@ -31,6 +31,9 @@ public:
 
     // 44_ShortestPath
     static void testShortestPath();
+
+    // 49_AStarSearch
+    static void testAStarSearch();
 };
 
 #endif //BEAUTYOFDATASTRUCTUREANDALGORITHM_TESTER_H

@@ -20,10 +20,13 @@ int main() {
     // Tester::testDynamicProgramming2();
 
     // 42
-    Tester::testDynamicProgramming3();
+    // Tester::testDynamicProgramming3();
 
     // 44
-    // Tester::testShortestPath();
+    Tester::testShortestPath();
+
+    // 49
+    Tester::testAStarSearch();
 
     return 0;
 }

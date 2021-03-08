@@ -18,5 +18,6 @@ void Tester::testShortestPath(){
     myGraph.addEdge(3, 5, 12);
     myGraph.addEdge(4, 5, 10);
 
-    myGraph.dijkstra(0, 5);
+    myGraph.dijkstraWithSTLQueue(0, 5);
+    myGraph.dijkstraWithCusQueue(0, 5);
 }

@@ -10,59 +10,61 @@
 #include <iostream>
 #include <vector>
 
-template<typename T>
-using List = std::vector<T>;
-
 // 下面这个类是为了 dijkstra 实现用的
-class Vertex {
-public:
+struct Vertex {
     int id;   // 顶点编号 ID
     int dist; // 从起始顶点到这个顶点的距离
-    Vertex() { }
-    Vertex(int id, int dist) : id(id), dist(dist) { }
-    bool operator < (const Vertex &v) const { return dist > v.dist; }
+
+    Vertex() : id(-1), dist(INF) {}
+
+    Vertex(int id, int dist) : id(id), dist(dist) {}
+
+    bool operator<(const Vertex &v) const { return dist > v.dist; } // 使得STL默认priority_queue是小顶堆
 };
 
-class Edge {
-public:
+struct Edge {
     int sid; // 边的起始顶点编号
     int tid; // 边的终止顶点编号
     int w;   // 权重
-    Edge(int sid, int tid, int w) : sid(sid), tid(tid), w(w) { }
+
+    Edge(int sid, int tid, int w) : sid(sid), tid(tid), w(w) {}
 };
 
-using AdjList = List<List<Edge>>;
+using AdjList = std::vector<std::vector<Edge>>;
 
-class Graph { // 有向有权图的邻接表表示
-private:
-    AdjList adj; // 邻接表
-    int v;       // 顶点个数
-
+// 有向有权图的邻接表表示
+class Graph {
 public:
     Graph(int v) : v(v) {
         adj.resize(v);
         for (int i = 0; i < v; ++i) { adj[i].reserve(v); }
     }
 
-    void addEdge(int s, int t, int w) { // 添加一条边
-        adj[s].emplace_back(s, t, w);
-    }
+    // 添加一条边
+    void addEdge(int s, int t, int w) { adj[s].emplace_back(s, t, w); }
 
-    void dijkstra(int s, int t);
+    void dijkstraWithSTLQueue(int s, int t);
+
     void dijkstraWithCusQueue(int s, int t);
 
-    void printPath(int s, int t, List<int> &predecessor) {
-        if (s == t) { return; }
+    void printPath(int s, int t, std::vector<int> &predecessor) {
+        if (s == t) {
+            std::cout << s;
+            return;
+        }
         printPath(s, predecessor[t], predecessor);
         std::cout << "->" << t;
     }
 
-    void printDistance(int s, int t, List<Vertex> &vertexes){
+    void printDistance(int s, int t, std::vector<Vertex> &vertexes) {
         std::cout << std::endl
                   << s << "->" << t << ": " << vertexes[t].dist
                   << std::endl;
     }
 
+private:
+    AdjList adj; // 邻接表
+    int v;       // 顶点个数
 };
 
 #endif //BEAUTYOFDATASTRUCTUREANDALGORITHM_SHORTESTPATH_HPP
