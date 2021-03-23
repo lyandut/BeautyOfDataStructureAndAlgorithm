@@ -5,7 +5,7 @@
 #include "../tester.h"
 #include "shortestPath.hpp"
 
-void Tester::testShortestPath(){
+void Tester::testShortestPath() {
     cout << "==== testShortestPath ====" << endl;
 
     Graph myGraph(6);
@@ -20,4 +20,5 @@ void Tester::testShortestPath(){
 
     myGraph.dijkstraWithSTLQueue(0, 5);
     myGraph.dijkstraWithCusQueue(0, 5);
+    myGraph.dijkstra(0, 5);
 }

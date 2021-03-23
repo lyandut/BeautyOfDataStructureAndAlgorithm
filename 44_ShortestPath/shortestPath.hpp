@@ -47,6 +47,33 @@ public:
 
     void dijkstraWithCusQueue(int s, int t);
 
+    void dijkstra(int s, int t) {
+        std::vector<int> predecessor(v);
+        std::vector<bool> visited(v, false);
+        std::vector<int> dist(v, INF);
+        dist[s] = 0;
+        for (int i = 0; i < v; ++i) {
+            int minVertex = -1;
+            for (int j = 0; j < v; ++j) {
+                if (!visited[j] && (minVertex == -1 || dist[j] < dist[minVertex])) {
+                    minVertex = j;
+                }
+            }
+            if (minVertex == t) { break; }
+            visited[minVertex] = true;
+            for (auto &e : adj[minVertex]) {
+                if (dist[minVertex] + e.w < dist[e.tid]) {
+                    dist[e.tid] = dist[minVertex] + e.w;
+                    predecessor[e.tid] = minVertex;
+                }
+            }
+        }
+        // 输出最短路径
+        printPath(s, t, predecessor);
+        // 输出最短路径长度
+        std::cout << std::endl << s << "->" << t << ": " << dist[t] << std::endl;
+    }
+
     void printPath(int s, int t, std::vector<int> &predecessor) {
         if (s == t) {
             std::cout << s;
